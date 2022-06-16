@@ -14,9 +14,9 @@ const PetList = ({pets, adoptPet}) => {
   return(
     <>
       <h3>Friends looking for a forever home</h3>
-      <ul>
-          {petComponents}
-      </ul>
+      <div id="pet-list">
+        {petComponents}
+      </div>
     </>
   )
 }

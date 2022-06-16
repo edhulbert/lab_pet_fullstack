@@ -25,24 +25,31 @@ const NewPetForm = ({pets, postPet}) => {
       postPet(statePet);
   }
 
-  return(
+  return(     
+    <>
+    <h4>Put a pet up for adoption</h4>
     <form onSubmit={handleFormSubmit}>
-      <h4>Put a pet up for adoption</h4>
-
-      <label for="name">Name</label>
-      <input type="text" name="name" onChange={handleChange} value={statePet.name} id="name"/>
-
-      <label for="type">Type</label>
-      <input type="text" name="type" onChange={handleChange} value={statePet.type} id="type"/>
-      
-      <label for="breed">Breed</label>
-      <input type="text" name="breed" onChange={handleChange} value={statePet.breed} id="breed"/>
-
-      <label for="age">Age</label>
-      <input type="text" name="age" onChange={handleChange} value={statePet.age} id="age"/>
-
+      <section class="input-fields">
+        <section class="input-field">
+            <label for="name">Name</label>
+            <input type="text" name="name" onChange={handleChange} value={statePet.name} id="name"/>
+        </section>
+        <section class="input-field">
+            <label for="type">Type</label>
+            <input type="text" name="type" onChange={handleChange} value={statePet.type} id="type"/>
+        </section>        
+        <section class="input-field">
+            <label for="breed">Breed</label>
+            <input type="text" name="breed" onChange={handleChange} value={statePet.breed} id="breed"/>
+        </section>
+        <section class="input-field">
+            <label for="age">Age</label>
+            <input type="text" name="age" onChange={handleChange} value={statePet.age} id="age"/>
+        </section> 
+      </section>
       <button>Submit</button>
     </form>
+    </> 
   )
 }
 

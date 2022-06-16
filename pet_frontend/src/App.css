@@ -6,3 +6,45 @@ ul {
 #root {
   text-align: center;
 }
+
+label, input {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.input-fields {
+  text-align: left;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.input-field {
+  padding : 1em;
+}
+
+button {
+  height: 2em;
+}
+
+#pet-list {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  /* grid-template-rows: repeat(auto-fill, 200px); */
+  justify-content: center;
+  column-gap: 5%;
+  row-gap: 2em;
+}
+
+.pet-item {
+  border: black;
+  /* border-style: solid; */
+  width : 10em;
+  background-color: rgb(251, 245, 232);
+  padding: 1em;
+}
+
+
+
+
