@@ -2,13 +2,11 @@ package com.codetests.bnta.petAPI.controllers;
 
 import com.codetests.bnta.petAPI.models.Pet;
 import com.codetests.bnta.petAPI.repositories.PetRepository;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,6 +26,12 @@ public class PetController {
     public ResponseEntity<Pet> addNewPet(@RequestBody Pet pet){
         Pet savedPet = petRepository.save(pet);
         return new ResponseEntity<>(savedPet, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping(value = "/pets/{id}")
+    public ResponseEntity<Long> deletePet(@PathVariable Long id) {
+        petRepository.deleteById(id);
+        return new ResponseEntity<>(id, HttpStatus.NO_CONTENT);
     }
 
 }
